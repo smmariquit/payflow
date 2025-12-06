@@ -1,0 +1,11 @@
+employee_id,first_name,last_name,department,salary,hire_date
+HC-2024-001,Juan,Dela Cruz,Sales,25000,2024-01-15
+HC-2024-002,Maria,Santos,Marketing,28000,2024-02-01
+HC-2024-003,Pedro,Reyes,IT,35000,2024-01-20
+HC-2024-004,Ana,Garcia,HR,30000,2024-03-10
+HC-2024-005,Jose,Ramos,Finance,32000,2024-02-15
+HC-2024-006,Sofia,Torres,Operations,27000,2024-01-25
+HC-2024-007,Miguel,Cruz,IT,36000,2024-02-20
+HC-2024-008,Elena,Mendoza,Sales,26000,2024-03-05
+HC-2024-009,Carlos,Gonzalez,Marketing,29000,2024-01-30
+HC-2024-010,Isabel,Fernandez,Finance,33000,2024-02-25
