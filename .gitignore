@@ -50,3 +50,6 @@ __pycache__/
 *.so
 .Python
 
+# Source files
+sources/
+
