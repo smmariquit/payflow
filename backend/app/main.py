@@ -193,31 +193,6 @@ async def get_system_ip() -> Dict[str, str]:
     }
 
 
-# Additional endpoint for employee transaction history
-@app.get("/api/v1/employee/transactions")
-async def get_transactions() -> Dict[str, Any]:
-    """Get employee transaction history (mock data)."""
-    return {
-        "success": True,
-        "transactions": [
-            {
-                "id": "TXN-001",
-                "type": "withdrawal",
-                "amount": 1000.00,
-                "date": "2024-12-05",
-                "status": "completed"
-            },
-            {
-                "id": "TXN-002",
-                "type": "withdrawal",
-                "amount": 500.00,
-                "date": "2024-12-03",
-                "status": "completed"
-            }
-        ]
-    }
-
-
 # AI Agent Endpoints (Placeholders)
 @app.post("/api/v1/ai/chat")
 async def ai_chat(message: Dict[str, str]) -> Dict[str, Any]:
@@ -294,38 +269,3 @@ async def ai_recommend() -> Dict[str, Any]:
         "recommendations": recommendations,
         "total_potential_savings": sum(r.get("potential_savings", 0) for r in recommendations)
     }
-
-
-# Employer AI Endpoints
-@app.post("/api/v1/ai/payroll-insights")
-async def ai_payroll_insights() -> Dict[str, Any]:
-    """
-    AI insights for employer payroll data.
-    
-    Uses AI service for payroll analytics.
-    """
-    ai_service = get_ai_service()
-    
-    # Mock payroll data (would come from database)
-    payroll_data = [
-        {"employee_id": "001", "earned": 8450, "withdrawn": 2000},
-        {"employee_id": "002", "earned": 9200, "withdrawn": 2500}
-    ]
-    
-    insights = await ai_service.payroll_insights(payroll_data)
-    return insights
-
-
-@app.post("/api/v1/ai/csv-validate")
-async def ai_csv_validate(data: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    AI-powered CSV validation and error detection.
-    
-    Uses AI service for intelligent data validation.
-    """
-    ai_service = get_ai_service()
-    
-    csv_data = data.get("csv_data", [])
-    validation_result = await ai_service.validate_csv(csv_data)
-    
-    return validation_result

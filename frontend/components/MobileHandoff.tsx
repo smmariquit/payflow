@@ -18,7 +18,7 @@ export default function MobileHandoff() {
       const data = await response.json();
       setQrUrl(data.frontend_url);
     } catch (error) {
-      console.error("Error fetching LAN IP:", error);
+      // Fallback to localhost
       setQrUrl("http://localhost:3000");
     } finally {
       setLoading(false);

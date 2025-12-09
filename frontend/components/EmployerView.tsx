@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LayoutDashboard, Database, Sparkles, Lock, Upload, TrendingUp, TrendingDown, Users, DollarSign, AlertCircle, Clock, CheckCircle, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, Database, Sparkles, Lock, Upload, TrendingUp, Users, DollarSign, AlertCircle, Clock, CheckCircle, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import MobileHandoff from "./MobileHandoff";
 import AIInsights from "./AIInsights";
 import AIPayrollOnboarding from "./AIPayrollOnboarding";
@@ -78,7 +78,7 @@ export default function EmployerView() {
       {/* Sidebar */}
       <div className="w-64 bg-white border-r border-gray-200 flex flex-col">
         <div className="p-6 border-b border-gray-200">
-          <h1 className="text-2xl font-bold text-[#B82329]">Home Credit PayFlow</h1>
+          <h1 className="text-2xl font-bold text-[#B82329]">HomeCredit PayFlow</h1>
           <p className="text-sm text-gray-600 mt-1">Employer Dashboard</p>
         </div>
 

@@ -42,7 +42,7 @@ export default function AIInsights() {
       setInsights(analyzeData.insights || []);
       setRecommendations(recommendData.recommendations || []);
     } catch (error) {
-      console.error("Error fetching AI insights:", error);
+      // Silent fail - using mock data as fallback
     } finally {
       setLoading(false);
     }
