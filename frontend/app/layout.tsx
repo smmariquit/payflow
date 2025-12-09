@@ -1,15 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lexend = Lexend({
+  variable: "--font-sans",
+  weight: ["300","400","500","600","700"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,6 +17,11 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "PayFlow",
+  },
+  icons: {
+    icon: "/payflow_logo.png",
+    shortcut: "/payflow_logo.png",
+    apple: "/payflow_logo.png",
   },
 };
 
@@ -45,7 +47,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192x192.svg" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lexend.variable} antialiased`}
       >
         {children}
       </body>
