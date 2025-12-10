@@ -19,6 +19,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import MobileHandoff from "./MobileHandoff";
+import { getApiBaseUrl } from "../lib/api";
 import AIInsights from "./AIInsights";
 import AIPayrollOnboarding from "./AIPayrollOnboarding";
 import ADALockInVisual from "./ADALockInVisual";
@@ -65,7 +66,8 @@ export default function EmployerView() {
   const fetchEmployees = async (page: number) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/employees?page=${page}&per_page=10`);
+      const baseUrl = getApiBaseUrl();
+      const response = await fetch(`${baseUrl}/api/v1/employees?page=${page}&per_page=10`);
       const data: EmployeesResponse = await response.json();
       
       if (data.success) {
