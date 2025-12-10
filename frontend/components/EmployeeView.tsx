@@ -228,28 +228,31 @@ export default function EmployeeView() {
   return (
     <div className="min-h-screen bg-linear-to-br from-red-50 to-orange-50 pb-8">
       {/* Header */}
-      <div className="bg-[#B82329] text-white px-6 py-8">
+      <div className="bg-[#B82329] text-white px-6 pb-8 pt-4">
         <div className="max-w-md mx-auto">
-          <h1 className="text-2xl font-bold mb-1">Payflow HomeCredit</h1>
-          <p className="text-red-100 text-sm">Good evening, {employeeData.name}!</p>
+          <div className="mb-1">
+            <Image src="/payflow_white.png" alt="Payflow" width={180} height={32} priority />
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-md mx-auto px-6 -mt-4">
-        {/* Earnings Card - Screen B1 Layout */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
+      <div className="max-w-md mx-auto px-6 -mt-8">
+        {/* Earnings Card - emphasize accessible amount over earned */}
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-5">
           <div className="text-center mb-8">
-            <p className="text-gray-600 mb-2">You've already earned this cutoff:</p>
-            <div className="text-5xl font-bold text-gray-900 mb-6">
-              {formatCurrency(employeeData.earned_this_period)}
-            </div>
-            
-            <div className="bg-green-50 border border-green-100 rounded-lg p-4 mb-6">
-              <p className="text-sm text-gray-600 mb-1">You can access up to:</p>
-              <div className="text-2xl font-bold text-[#B82329]">
+            {/* Prominent: accessible amount */}
+            <div className="bg-green-50 border border-green-100 rounded-xl p-4 mb-4">
+              <p className="text-sm font-medium text-green-900 mb-2">You can access up to</p>
+              <div className="text-5xl font-extrabold text-[#B82329] leading-tight">
                 {formatCurrency(employeeData.available_for_withdrawal)}
               </div>
+            </div>
+
+            {/* Secondary: earned so far */}
+            <p className="text-gray-500 mb-1">You've already earned this cutoff</p>
+            <div className="text-2xl font-semibold text-gray-900">
+              {formatCurrency(employeeData.earned_this_period)}
             </div>
           </div>
 

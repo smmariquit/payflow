@@ -1,7 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { TrendingUp, AlertCircle, Lightbulb, Target, Users, Wallet, Clock, BarChart3 } from "lucide-react";
+import { 
+  ArrowTrendingUpIcon,
+  ExclamationTriangleIcon,
+  ExclamationCircleIcon,
+  LightBulbIcon,
+  UsersIcon,
+  CreditCardIcon,
+  ClockIcon,
+  ChartBarIcon,
+  CheckCircleIcon,
+  SparklesIcon
+} from "@heroicons/react/24/outline";
 import { getApiBaseUrl } from "@/lib/api";
 
 interface Insight {
@@ -75,12 +86,12 @@ export default function AIInsights() {
   const getPriorityIcon = (priority: string) => {
     switch (priority) {
       case "high":
-        return <AlertCircle className="w-5 h-5 text-red-600" />;
+        return <ExclamationTriangleIcon className="w-5 h-5 text-red-600" />;
       case "medium":
-        return <Lightbulb className="w-5 h-5 text-yellow-600" />;
+        return <LightBulbIcon className="w-5 h-5 text-yellow-600" />;
       case "low":
       default:
-        return <Target className="w-5 h-5 text-blue-600" />;
+        return <ArrowTrendingUpIcon className="w-5 h-5 text-blue-600" />;
     }
   };
 
@@ -108,7 +119,7 @@ export default function AIInsights() {
               <p className="text-xs text-green-600 mt-1">↑ 12 this month</p>
             </div>
             <div className="p-3 bg-blue-50 rounded-lg">
-              <Users className="w-6 h-6 text-blue-600" />
+              <UsersIcon className="w-6 h-6 text-blue-600" />
             </div>
           </div>
         </div>
@@ -121,7 +132,7 @@ export default function AIInsights() {
               <p className="text-xs text-gray-500 mt-1">Average per employee</p>
             </div>
             <div className="p-3 bg-green-50 rounded-lg">
-              <Wallet className="w-6 h-6 text-green-600" />
+              <CreditCardIcon className="w-6 h-6 text-green-600" />
             </div>
           </div>
         </div>
@@ -134,7 +145,7 @@ export default function AIInsights() {
               <p className="text-xs text-green-600 mt-1">↓ 65% vs manual</p>
             </div>
             <div className="p-3 bg-purple-50 rounded-lg">
-              <Clock className="w-6 h-6 text-purple-600" />
+              <ClockIcon className="w-6 h-6 text-purple-600" />
             </div>
           </div>
         </div>
@@ -147,7 +158,7 @@ export default function AIInsights() {
               <p className="text-xs text-green-600 mt-1">↑ 8% this quarter</p>
             </div>
             <div className="p-3 bg-orange-50 rounded-lg">
-              <BarChart3 className="w-6 h-6 text-orange-600" />
+              <ChartBarIcon className="w-6 h-6 text-orange-600" />
             </div>
           </div>
         </div>
@@ -156,7 +167,7 @@ export default function AIInsights() {
       {/* Employee Financial Insights */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <div className="flex items-center gap-2 mb-4">
-          <TrendingUp className="w-5 h-5 text-[#B82329]" />
+          <ArrowTrendingUpIcon className="w-5 h-5 text-gray-600" />
           <h3 className="text-lg font-semibold text-gray-900">Employee Financial Insights</h3>
         </div>
 
@@ -167,7 +178,7 @@ export default function AIInsights() {
               className={`p-4 rounded-lg border ${getSeverityColor(insight.severity)}`}
             >
               <div className="flex items-start gap-3">
-                <AlertCircle className={`w-5 h-5 mt-0.5 ${getSeverityIconColor(insight.severity)}`} />
+                <ExclamationCircleIcon className={`w-5 h-5 mt-0.5 text-gray-600`} />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">{insight.title}</h4>
                   <p className="text-sm text-gray-700">{insight.description}</p>
@@ -181,7 +192,7 @@ export default function AIInsights() {
       {/* HR Optimization Recommendations */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <div className="flex items-center gap-2 mb-4">
-          <Lightbulb className="w-5 h-5 text-[#B82329]" />
+          <LightBulbIcon className="w-5 h-5 text-gray-600" />
           <h3 className="text-lg font-semibold text-gray-900">
             HR Cost Optimization
           </h3>

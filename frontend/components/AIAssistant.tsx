@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { X, Send, Sparkles, RotateCcw } from "lucide-react";
+import { X, Send, Sparkles, RotateCcw, AlertCircle } from "lucide-react";
 import { getApiBaseUrl } from "@/lib/api";
 
 interface Message {
@@ -139,7 +139,7 @@ export default function AIAssistant() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-[#B82329] hover:bg-[#a01f25] text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all z-50 group"
+          className="fixed bottom-6 right-6 bg-[#B82329] hover:bg-[#a01f25] text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all z-50 group cursor-pointer"
           aria-label="Open AI Assistant"
         >
           <Sparkles className="w-5 h-5" />
@@ -163,14 +163,14 @@ export default function AIAssistant() {
             <div className="flex items-center gap-2">
               <button
                 onClick={resetChat}
-                className="text-white/80 hover:text-white transition-colors p-1"
+                className="text-white/80 hover:text-white transition-colors p-1 cursor-pointer"
                 title="Reset chat"
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white/80 hover:text-white transition-colors p-1"
+                className="text-white/80 hover:text-white transition-colors p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -221,7 +221,7 @@ export default function AIAssistant() {
                       setInput(question);
                       setTimeout(() => sendMessage(), 100);
                     }}
-                    className="w-full text-left px-3 py-2 bg-white hover:bg-red-50 active:bg-red-100 text-[#B82329] border border-gray-200 rounded-xl text-sm transition-colors"
+                    className="w-full text-left px-3 py-2 bg-white hover:bg-red-50 active:bg-red-100 text-[#B82329] border border-gray-200 rounded-xl text-sm transition-colors cursor-pointer"
                   >
                     {question}
                   </button>
@@ -246,7 +246,7 @@ export default function AIAssistant() {
               <button
                 onClick={sendMessage}
                 disabled={loading || !input.trim()}
-                className="bg-[#B82329] hover:bg-[#a01f25] text-white px-4 py-2 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#B82329] hover:bg-[#a01f25] text-white px-4 py-2 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 <Send className="w-4 h-4" />
               </button>
